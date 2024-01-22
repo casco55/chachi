@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+.input {
+  &--controlled {
+    outline: none;
+    border: none;
+    width: calc(100% - 2rem);
+    &:focus {
+      background-color: #ffffff;
+      border: none;
+    }
+  }
+  &--disabled {
+    background-color: #fafafa;
+  }
+}

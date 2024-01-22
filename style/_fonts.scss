@@ -1,0 +1,39 @@
+@use "variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+
+.font {
+  &--family {
+    &--#{$openSans} {
+      font-family: "Open Sans", sans-serif;
+    }
+    &--#{$ptSerif} {
+      font-family: "PT Serif", serif;
+    }
+  }
+  &--size {
+    &--#{$xs} {
+      font-size: 0.8rem;
+    }
+    &--#{$sm} {
+      font-size: 1rem;
+    }
+    &--#{$md} {
+      font-size: 1.5rem;
+    }
+    &--#{$lg} {
+      font-size: 2rem;
+    }
+    &--#{$xl} {
+      font-size: 3rem;
+    }
+  }
+  &--weight {
+    &--#{$normal} {
+      font-weight: normal !important;
+    }
+    &--#{$bold} {
+      font-weight: bold !important;
+    }
+  }
+}
