@@ -15,9 +15,28 @@ export const SelectInput = ({
   errorState = false,
   errorMessage = "Campo requerido",
   fontFamily = "openSans",
-  options = [],
+  options = [
+    {
+      value: "value",
+      text: "text",
+    },
+    {
+      value: "value2",
+      text: "text2",
+    },
+    {
+      value: "value3",
+      text: "text3",
+    },
+    {
+      value: "value4",
+      text: "text4",
+    },
+  ],
   onInputChange = () => {},
-  onSelect = () => {},
+  onSelect = () => {
+    console.log("onselect");
+  },
   xl = 12,
   lg = 12,
   md = 12,
@@ -61,20 +80,27 @@ export const SelectInput = ({
           <MdKeyboardArrowRight
             size={20}
             id={`arrow-${id}`}
-            className="arrow"
+            className="arrow cursor-pointer"
             onClick={() => setShowOptions(!showOptions)}
           />
         </div>
-        <div className="d-flex flex-column position-relative">
+        <div className="d-flex flex-column position-relative z-index-10">
           {showOptions && (
-            <div
-              className="d-flex flex-column position-absolute col-12 bg-light"
-              id="options"
-            >
-              <div className="bg-info col-12 p-2">a</div>
-              <div className="bg-info col-12 p-2">a</div>
-              <div className="bg-info col-12 p-2">a</div>
-            </div>
+            <>
+              <div
+                className="d-flex flex-column position-absolute col-12 bg-white"
+                id="options"
+              >
+                {options.map(({ value, text, key }) => (
+                  <div
+                    className={`col-12 p-2 border-bottom cursor-pointer option-item`}
+                    onClick={() => onSelect(value)}
+                  >
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </>
           )}
           <label
             className={`font--size--xs text-danger mt-1 ${
