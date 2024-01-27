@@ -1,8 +1,15 @@
+@use "../../../style/styles" as *;
+
 .arrow {
   transition: all 0.5s ease;
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.option {
+  &-container {
+    height: 15rem;
+  }
 }
 .option-item {
   -webkit-user-select: none;
@@ -22,5 +29,12 @@
   }
   &-100 {
     z-index: 100;
+  }
+}
+.overflow {
+  &-y {
+    &-auto {
+      overflow-y: auto;
+    }
   }
 }
