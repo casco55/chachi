@@ -8,7 +8,7 @@ import { useSelectInput } from "./useSelectInput";
 export const SelectInput = ({
   label = "label",
   id = "this",
-  name = "",
+  name = "this",
   selectedValue = "value5",
   setSelectedValue = (value) => {
     console.log(value);
