@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentHistory, ComponentMeta } from "@storybook/react";
-import { ProductCard } from "./components/ProductCard/ProductCard";
+import { ProductCard } from "./components/productCard";
 
 export default {
   title: "Components/ProductCard",
