@@ -26,6 +26,10 @@ export default {
       name: "description",
       control: "text",
     },
+    extraClass: {
+      name: "extraClass",
+      control: "text",
+    },
   },
 };
 

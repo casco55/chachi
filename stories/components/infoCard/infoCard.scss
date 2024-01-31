@@ -1,0 +1,63 @@
+.main-wrapper {
+  background-color: var(--White, #fff);
+  display: flex;
+  max-width: 370px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--Paragraph-Font, #767676);
+  white-space: nowrap;
+  text-transform: capitalize;
+  padding: 25px;
+}
+
+.contact-info {
+  align-self: end;
+  display: flex;
+  margin-top: 79px;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 123.6%;
+}
+
+.email,
+.skype,
+.telegram {
+  font-family: Inter, sans-serif;
+}
+
+.contact-details {
+  align-self: start;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: right;
+  line-height: 160%;
+}
+
+.profile-image {
+  aspect-ratio: 1;
+  object-fit: auto;
+  object-position: center;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.details {
+  display: flex;
+  margin-top: 40px;
+  padding-left: 20px;
+  flex-direction: column;
+  align-items: end;
+}
+
+.email-address,
+.skype-username,
+.telegram-username {
+  font-kerning: none;
+  font-feature-settings: "calt" off;
+  font-family: Inter, sans-serif;
+}
