@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ComponentHistory, ComponentMeta } from "@storybook/react";
-import { InfoCard } from "./index";
+import { InfoCard } from "../index";
 
 export default {
   title: "Components/InfoCard",
