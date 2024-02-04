@@ -11,22 +11,19 @@ export const useSelectInput = ({
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [selectedOption, setSelectedOption] = useState(selectedValue);
   useEffect(() => {
+    // reordenar opciones, selected options al comienzo y el resto en orden
+    const reorderedOptions = [
+      options.find((option) => option.value === selectedOption),
+      ...options.filter((option) => option.value !== selectedOption),
+    ];
+    setFilteredOptions(reorderedOptions);
     if (showOptions) {
       document.getElementById(`arrow-${id}`).style.transform = "rotate(90deg)";
       return;
     }
     document.getElementById(`arrow-${id}`).style.transform = "rotate(0deg)";
   }, [showOptions]);
-  useEffect(() => {
-    setFilteredOptions(options);
-    if (showOptions) {
-      const currentlySelectedOption = document.getElementById(
-        `option-${selectedOption}`
-      );
-      currentlySelectedOption.scrollIntoView({ block: "center" });
-      return;
-    }
-  }, [showOptions]);
+
   useEffect(() => {
     if (selectedValue !== selectedOption) {
       setSelectedOption(selectedValue);

@@ -126,11 +126,11 @@ export const SelectInput = ({
                 >
                   {filteredOptions.map(({ value, text, key }) => (
                     <div
-                      key={key}
+                      key={`${key}-${value}`}
                       className={`col-12 p-2 border-bottom cursor-pointer option-item  ${
                         selectedOption === value ? "bg-primary text-white" : ""
                       }`}
-                      id={`option-${value}`}
+                      id={value}
                       onClick={() => handleSelectOption(value)}
                     >
                       {text}
