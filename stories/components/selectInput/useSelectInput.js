@@ -11,24 +11,19 @@ export const useSelectInput = ({
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [selectedOption, setSelectedOption] = useState(selectedValue);
   useEffect(() => {
-    // reordenar opciones, selected options al comienzo y el resto en orden
-    const reorderedOptions = [
-      options.find((option) => option.value === selectedOption),
-      ...options.filter((option) => option.value !== selectedOption),
-    ];
-    setFilteredOptions(reorderedOptions);
-    if (showOptions) {
+    if (showOptions && inputText) {
       document.getElementById(`arrow-${id}`).style.transform = "rotate(90deg)";
+      const selectedOptionElement = document.getElementById(selectedOption);
+      if (selectedOptionElement) {
+        selectedOptionElement.scrollIntoView({
+          block: "center",
+        });
+      }
       return;
     }
     document.getElementById(`arrow-${id}`).style.transform = "rotate(0deg)";
-  }, [showOptions]);
-
-  useEffect(() => {
-    if (selectedValue !== selectedOption) {
-      setSelectedOption(selectedValue);
-    }
-  }, [selectedValue]);
+    setFilteredOptions(options);
+  }, [showOptions, inputText]);
 
   useEffect(() => {
     if (selectedOption && filteredOptions) {
@@ -41,18 +36,12 @@ export const useSelectInput = ({
   const handleInputChange = (event) => {
     setInputText(event.target.value);
     setShowOptions(true);
-  };
-  useEffect(() => {
-    if (!inputText) {
-      setFilteredOptions(options);
-      return;
-    }
     setFilteredOptions(
       options.filter((option) =>
-        option.text.toLowerCase().includes(inputText.toLowerCase())
+        option.text.toLowerCase().includes(event.target.value.toLowerCase())
       )
     );
-  }, [inputText]);
+  };
 
   const handleSelectOption = (value) => {
     setInputText(options.find((option) => option.value === value).text);
