@@ -5,6 +5,7 @@ import { ProductCard } from "./stories/components/productCard";
 import { SelectInput } from "./stories/components/selectInput";
 import { ServiceCard } from "./stories/components/serviceCard";
 import { InfoCard } from "./stories/components/infoCard";
+import { LoginForm } from "./stories/components/loginForm";
 export {
   Text,
   Checkbox,
@@ -13,4 +14,5 @@ export {
   SelectInput,
   ServiceCard,
   InfoCard,
+  LoginForm,
 };
