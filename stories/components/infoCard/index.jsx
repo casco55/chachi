@@ -3,6 +3,8 @@
  */
 import React from "react";
 import { MdOutlineEmail } from "react-icons/md";
+import { InfoCardItem } from "./InfoCardItem";
+
 import "./infoCard.scss";
 
 export const InfoCard = ({
@@ -30,13 +32,7 @@ export const InfoCard = ({
       {vector}
       <div className="col-10 mx-auto d-flex flex-column py-3">
         {items.map(({ property, value, index }) => (
-          <div
-            className="d-flex flex-row col-12 justify-content-between my-1"
-            key={index}
-          >
-            <p className="my-auto">{property}</p>
-            <p className="text-secondary my-auto">{value}</p>
-          </div>
+          <InfoCardItem key={index} property={property} value={value} />
         ))}
       </div>
     </div>
