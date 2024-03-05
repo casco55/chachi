@@ -6,6 +6,9 @@ import { SelectInput } from "./stories/components/selectInput";
 import { ServiceCard } from "./stories/components/serviceCard";
 import { InfoCard } from "./stories/components/infoCard";
 import { LoginForm } from "./stories/components/loginForm";
+import { Label } from "./stories/components/label";
+import { InputErrorLabel } from "./stories/components/inputErrorLabel";
+import { SelectOptions } from "./stories/components/selectInput/components/SelectOptions";
 export {
   Text,
   Checkbox,
@@ -15,4 +18,7 @@ export {
   ServiceCard,
   InfoCard,
   LoginForm,
+  Label,
+  InputErrorLabel,
+  SelectOptions,
 };

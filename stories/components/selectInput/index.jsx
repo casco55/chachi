@@ -1,12 +1,12 @@
-import { Column } from "../Column";
-import { MdErrorOutline } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "../../../style/styles.scss";
 import "./selectInput.scss";
-import { useSelectInput } from "./useSelectInput";
+import { useSelectInput } from "./hooks/useSelectInput";
+import { selectInputOptions } from "./helpers/selectInput.helper";
+import { Label, InputErrorLabel, SelectOptions } from "../../../index";
 
 export const SelectInput = ({
-  label = "label",
+  label = "Categoría",
   id = "this",
   name = "",
   selectedValue = "value5",
@@ -17,50 +17,7 @@ export const SelectInput = ({
   disabled = false,
   errorState = false,
   errorMessage = "Campo requerido",
-  fontFamily = "openSans",
-  options = [
-    {
-      value: "value",
-      text: "text",
-    },
-    {
-      value: "value2",
-      text: "text2",
-    },
-    {
-      value: "value3",
-      text: "text3",
-    },
-    {
-      value: "value4",
-      text: "text4",
-    },
-    {
-      value: "value5",
-      text: "text5",
-    },
-    {
-      value: "value6",
-      text: "text6",
-    },
-    {
-      value: "value7",
-      text: "text7",
-    },
-    {
-      value: "value8",
-      text: "text8",
-    },
-    {
-      value: "value9",
-      text: "text9",
-    },
-  ],
-  xl = 12,
-  lg = 12,
-  md = 12,
-  sm = 12,
-  xs = 12,
+  options = selectInputOptions,
 }) => {
   const {
     inputText,
@@ -78,17 +35,8 @@ export const SelectInput = ({
   });
   return (
     <>
-      <Column
-        xl={xl}
-        lg={lg}
-        md={md}
-        sm={sm}
-        xs={xs}
-        extraClass={`font--family--${fontFamily}`}
-      >
-        <label className="mb-1 font--weight--bold font--size--sm ">
-          {label}
-        </label>
+      <div className="d-flex flex-column col-12">
+        <Label label={label} fontWeight="bold" fontSize="6" className="mb-2" />
         <div
           className={`border ${
             errorState ? "border-danger" : ""
@@ -97,7 +45,7 @@ export const SelectInput = ({
           }`}
         >
           <input
-            className={`input--controlled ${disabled ? "input--disabled" : ""}`}
+            className={`input input--${disabled ? "disabled" : "controlled"}`}
             type="text"
             placeholder={placeholder}
             value={inputText}
@@ -106,49 +54,30 @@ export const SelectInput = ({
             name={name}
             disabled={disabled}
           />
-          {errorState && (
-            <MdErrorOutline className="ms-auto me-0 text-danger" />
-          )}
           <MdKeyboardArrowRight
             size={20}
             id={`arrow-${id}`}
             className="arrow cursor-pointer"
-            onClick={handleDisplayOptions}
+            onClick={!disabled ? handleDisplayOptions : () => {}}
           />
         </div>
-        <div className="d-flex flex-column position-relative  option-container z-index-10">
+        <div className="d-flex flex-column position-relative option-container z-index-10">
           {showOptions && (
-            <>
-              <div className="position-absolute col-12 bg-white" id="options">
-                <div
-                  className="d-flex flex-column col-12 option-container overflow-y-auto"
-                  id="options"
-                >
-                  {filteredOptions.map(({ value, text, key }) => (
-                    <div
-                      key={`${key}-${value}`}
-                      className={`col-12 p-2 border-bottom cursor-pointer option-item  ${
-                        selectedOption === value ? "bg-primary text-white" : ""
-                      }`}
-                      id={value}
-                      onClick={() => handleSelectOption(value)}
-                    >
-                      {text}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </>
+            <SelectOptions
+              selectedOption={selectedOption}
+              handleSelectOption={handleSelectOption}
+              filteredOptions={filteredOptions}
+            />
           )}
-          <label
-            className={`font--size--xs text-danger mt-1 ${
-              errorState ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {errorMessage}
-          </label>
+          <InputErrorLabel
+            errorState={errorState}
+            errorMessage={errorMessage}
+            fontWeight="normal"
+            fontSize="6"
+            className="mt-1 d-flex align-items-center"
+          />
         </div>
-      </Column>
+      </div>
     </>
   );
 };
