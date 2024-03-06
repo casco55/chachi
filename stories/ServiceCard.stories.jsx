@@ -1,5 +1,4 @@
 import React from "react";
-import { ComponentHistory, ComponentMeta } from "@storybook/react";
 import { ServiceCard } from "./components/serviceCard";
 
 export default {

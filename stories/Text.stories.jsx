@@ -18,7 +18,7 @@ export default {
     fontsize: {
       name: "fontsize",
       control: "select",
-      options: ["small", "medium", "large"],
+      options: ["1", "2", "3", "4", "5", "6"],
     },
     fontWeight: {
       name: "fontWeight",

@@ -9,6 +9,7 @@ import { LoginForm } from "./stories/components/loginForm";
 import { Label } from "./stories/components/label";
 import { InputErrorLabel } from "./stories/components/inputErrorLabel";
 import { SelectOptions } from "./stories/components/selectInput/components/SelectOptions";
+import { TextInput } from "./stories/components/textInput";
 export {
   Text,
   Checkbox,
@@ -21,4 +22,5 @@ export {
   Label,
   InputErrorLabel,
   SelectOptions,
+  TextInput,
 };

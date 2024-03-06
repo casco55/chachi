@@ -1,9 +1,9 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "../../../style/styles.scss";
 import "./selectInput.scss";
+import { Label, InputErrorLabel, SelectOptions } from "../../../index";
 import { useSelectInput } from "./hooks/useSelectInput";
 import { selectInputOptions } from "./helpers/selectInput.helper";
-import { Label, InputErrorLabel, SelectOptions } from "../../../index";
 
 export const SelectInput = ({
   label = "Categoría",
@@ -39,13 +39,13 @@ export const SelectInput = ({
         <Label label={label} fontWeight="bold" fontSize="6" className="mb-2" />
         <div
           className={`border ${
-            errorState ? "border-danger" : ""
-          } rounded px-2 py-1 d-flex align-items-center input-container ${
-            disabled ? "input--disabled" : ""
-          }`}
+            errorState && "border-danger"
+          } rounded d-flex align-items-center border rounded`}
         >
           <input
-            className={`input input--${disabled ? "disabled" : "controlled"}`}
+            className={`input input--${
+              disabled ? "disabled" : "controlled "
+            } py-2 px-3 border-0 rounded`}
             type="text"
             placeholder={placeholder}
             value={inputText}
@@ -55,9 +55,9 @@ export const SelectInput = ({
             disabled={disabled}
           />
           <MdKeyboardArrowRight
-            size={20}
+            size={24}
             id={`arrow-${id}`}
-            className="arrow cursor-pointer"
+            className="arrow cursor-pointer me-2"
             onClick={!disabled ? handleDisplayOptions : () => {}}
           />
         </div>
