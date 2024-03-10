@@ -1,8 +1,8 @@
 {
   "name": "chachi",
-  "version": "0.1.0",
+  "version": "0.1.11",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",

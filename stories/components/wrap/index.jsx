@@ -9,7 +9,7 @@ export const Wrap = ({
 }) => {
   return (
     <div
-      className={`col-xl-${xl} col-lg-${lg} col-md-${md} col-sm-${sm} col-xs-${xs} d-flex flex-wrap ${extraClass}`}
+      className={`col-xl-${xl} col-lg-${lg} col-md-${md} col-sm-${sm} col-${xs} d-flex flex-wrap ${extraClass}`}
     >
       {children}
     </div>
