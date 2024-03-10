@@ -10,6 +10,8 @@ import { Label } from "./stories/components/label";
 import { InputErrorLabel } from "./stories/components/inputErrorLabel";
 import { SelectOptions } from "./stories/components/selectInput/components/SelectOptions";
 import { TextInput } from "./stories/components/textInput";
+import { Column } from "./stories/components/column";
+import { Wrap } from "./stories/components/wrap";
 export {
   Text,
   Checkbox,
@@ -23,4 +25,6 @@ export {
   InputErrorLabel,
   SelectOptions,
   TextInput,
+  Column,
+  Wrap,
 };

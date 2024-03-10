@@ -8,7 +8,7 @@ export const TextInput = ({
   value = "Juan",
   placeholder = "placeholder",
   onChange = () => {},
-  onKeyPress = () => {},
+  onKeyDown = () => {},
   disabled = false,
   errorState = false,
   errorMessage = "Campo requerido",
@@ -26,7 +26,7 @@ export const TextInput = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          onKeyPress={onKeyPress}
+          onKeyDown={onKeyDown}
           id={id}
           name={name}
           disabled={disabled}
