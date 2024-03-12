@@ -1,5 +1,5 @@
 import { ErrorIcon } from "../../assets/icons/ErrorIcon";
-import { Column } from "./Column";
+import { Column } from "./column";
 
 export const Input = ({
   type = "text",

@@ -12,6 +12,7 @@ import { SelectOptions } from "./stories/components/selectInput/components/Selec
 import { TextInput } from "./stories/components/textInput";
 import { Column } from "./stories/components/column";
 import { Wrap } from "./stories/components/wrap";
+import { Accordion } from "./stories/components/accordion";
 export {
   Text,
   Checkbox,
@@ -27,4 +28,5 @@ export {
   TextInput,
   Column,
   Wrap,
+  Accordion,
 };
