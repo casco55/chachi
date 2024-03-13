@@ -1,0 +1,9 @@
+@use "../../../style/styles" as *;
+.arrow-icon.rotate-180 {
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out;
+}
+.arrow-icon {
+  transition: all 0.5s ease-in-out;
+  transform: rotate(0deg);
+}

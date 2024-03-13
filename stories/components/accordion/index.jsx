@@ -36,7 +36,7 @@ export const Accordion = ({
 }) => {
   return (
     <>
-      <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="d-flex flex-column border border-1 rounded col-12">
         {accordionItems.map(({ itemTitle, itemContent }, index) => (
           <AccordionItem
             key={index}

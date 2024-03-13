@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "gsap": "^3.12.5",
     "react-icons": "^4.8.0"
   }
 }
