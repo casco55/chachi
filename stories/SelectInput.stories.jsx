@@ -1,6 +1,5 @@
 import React from "react";
-import { ComponentHistory, ComponentMeta } from "@storybook/react";
-import { SelectInput } from "./components/selectInput";
+import { SelectInput } from "../index";
 
 export default {
   title: "Components/SelectInput",

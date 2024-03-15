@@ -1,4 +1,3 @@
-import "../../../style/styles.scss";
 import { Label, InputErrorLabel } from "../../../index";
 
 export const TextInput = ({

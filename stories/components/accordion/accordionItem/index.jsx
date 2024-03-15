@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "../accordion.scss";
-import { MdKeyboardArrowUp } from "react-icons/md";
 
 export const AccordionItem = ({
   itemTitle = "Accordion Item #1",
+  headingId = "accordion-headingOne",
+  collapseId = "accordion-item-test-one",
   itemContent = (
     <>
       <strong>This is the second item's accordion body.</strong> It is hidden by
@@ -16,28 +17,26 @@ export const AccordionItem = ({
     </>
   ),
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-
-  const handleClick = () => setIsCollapsed(!isCollapsed);
-
   return (
     <>
-      <div className="d-flex flex-column border border-1 col-12">
-        <button
-          onClick={handleClick}
-          className={`d-flex flex-row justify-content-between align-items-center px-3 bg-${
-            isCollapsed ? "white" : "gray"
-          } border-0`}
+      <div className="accordion-item">
+        <h2 className="accordion-header" id={headingId}>
+          <button
+            className="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target={`#${collapseId}`}
+            aria-controls={collapseId}
+          >
+            {itemTitle}
+          </button>
+        </h2>
+        <div
+          id={collapseId}
+          className="accordion-collapse collapse"
+          aria-labelledby={headingId}
         >
-          <h2 className="">{itemTitle}</h2>
-          <MdKeyboardArrowUp
-            size={24}
-            className={`arrow-icon ${!isCollapsed && "rotate-180"}`}
-          />
-        </button>
-
-        <div className={``}>
-          <div className="">{itemContent}</div>
+          <div className="accordion-body">{itemContent}</div>
         </div>
       </div>
     </>

@@ -1,9 +1,12 @@
 import { AccordionItem } from "./accordionItem";
+import "./accordion.scss";
 
 export const Accordion = ({
   accordionItems = [
     {
       itemTitle: "Accordion Item #1",
+      headingId: "accordion-headingOne",
+      collapseId: "accordion-item-test-one",
       itemContent: (
         <>
           <strong>This is the second item's accordion body.</strong> It is
@@ -19,6 +22,8 @@ export const Accordion = ({
     },
     {
       itemTitle: "Accordion Item #2",
+      headingId: "accordion-headingTwo",
+      collapseId: "accordion-item-test-two",
       itemContent: (
         <>
           <strong>This is the second item's accordion body.</strong> It is
@@ -36,14 +41,18 @@ export const Accordion = ({
 }) => {
   return (
     <>
-      <div class="d-flex flex-column border border-1 rounded col-12">
-        {accordionItems.map(({ itemTitle, itemContent }, index) => (
-          <AccordionItem
-            key={index}
-            itemTitle={itemTitle}
-            itemContent={itemContent}
-          />
-        ))}
+      <div className="accordion" id="accordionPanelsStayOpenExample">
+        {accordionItems.map(
+          ({ itemTitle, headingId, collapseId, itemContent }, index) => (
+            <AccordionItem
+              key={index}
+              itemTitle={itemTitle}
+              headingId={headingId}
+              collapseId={collapseId}
+              itemContent={itemContent}
+            />
+          )
+        )}
       </div>
     </>
   );

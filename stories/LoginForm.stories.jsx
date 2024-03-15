@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LoginForm } from "./components/loginForm";
+import { LoginForm } from "../index";
 
 export default {
   title: "Components/LoginForm",
