@@ -1,5 +1,7 @@
+import React from "react";
 import { AccordionItem } from "./accordionItem";
 import "./accordion.scss";
+import { AccordionItemProps } from "../../interfaces/accordionInterfaces";
 
 export const Accordion = ({
   accordionItems = [
@@ -38,7 +40,7 @@ export const Accordion = ({
       ),
     },
   ],
-}) => {
+}: AccordionItemProps) => {
   return (
     <>
       <div className="accordion" id="accordionPanelsStayOpenExample">

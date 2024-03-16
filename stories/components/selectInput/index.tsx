@@ -1,16 +1,18 @@
+import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "../../../style/styles.scss";
 import "./selectInput.scss";
-import { Label, InputErrorLabel, SelectOptions } from "../../../index";
+import { SelectOptions } from "../../../index";
 import { useSelectInput } from "./hooks/useSelectInput";
 import { selectInputOptions } from "./helpers/selectInput.helper";
+import { SelectInputProps } from "../../interfaces/selectInput";
 
 export const SelectInput = ({
   label = "Categoría",
   id = "this",
   name = "",
   selectedValue = "value5",
-  setSelectedValue = (value) => {
+  setSelectedValue = (value: string) => {
     console.log(value);
   },
   placeholder = "placeholder",
@@ -18,7 +20,7 @@ export const SelectInput = ({
   errorState = false,
   errorMessage = "Campo requerido",
   options = selectInputOptions,
-}) => {
+}: SelectInputProps) => {
   const {
     inputText,
     showOptions,
@@ -36,7 +38,7 @@ export const SelectInput = ({
   return (
     <>
       <div className="d-flex flex-column col-12">
-        <Label label={label} fontWeight="bold" fontSize="6" className="mb-2" />
+        {/* <Label label={label} fontWeight="bold" fontSize="6" className="mb-2" /> */}
         <div
           className={`border ${
             errorState && "border-danger"
@@ -69,13 +71,13 @@ export const SelectInput = ({
               filteredOptions={filteredOptions}
             />
           )}
-          <InputErrorLabel
+          {/* <InputErrorLabel
             errorState={errorState}
             errorMessage={errorMessage}
             fontWeight="normal"
             fontSize="6"
             className="mt-1 d-flex align-items-center"
-          />
+          /> */}
         </div>
       </div>
     </>

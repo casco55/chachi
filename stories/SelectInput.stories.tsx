@@ -1,4 +1,5 @@
 import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SelectInput } from "../index";
 
 export default {
@@ -78,8 +79,10 @@ export default {
       control: "number",
     },
   },
-};
+} as ComponentMeta<typeof SelectInput>;
 
-const Template = (args) => <SelectInput {...args} />;
+const Template: ComponentStory<typeof SelectInput> = (args) => (
+  <SelectInput {...args} />
+);
 
 export const Default = Template.bind({});

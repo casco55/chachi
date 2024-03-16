@@ -1,11 +1,12 @@
-import { useState } from "react";
+import React from "react";
+import { AccordionItemProps } from "../../../interfaces/accordionInterfaces";
 import "../accordion.scss";
 
 export const AccordionItem = ({
   itemTitle = "Accordion Item #1",
   headingId = "accordion-headingOne",
   collapseId = "accordion-item-test-one",
-  itemContent = (
+  children = (
     <>
       <strong>This is the second item's accordion body.</strong> It is hidden by
       default, until the collapse plugin adds the appropriate classes that we
@@ -16,7 +17,7 @@ export const AccordionItem = ({
       <code>.accordion-body</code>, though the transition does limit overflow.
     </>
   ),
-}) => {
+}: AccordionItemProps) => {
   return (
     <>
       <div className="accordion-item">
@@ -36,7 +37,7 @@ export const AccordionItem = ({
           className="accordion-collapse collapse"
           aria-labelledby={headingId}
         >
-          <div className="accordion-body">{itemContent}</div>
+          <div className="accordion-body">{children}</div>
         </div>
       </div>
     </>

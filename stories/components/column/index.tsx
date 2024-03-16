@@ -1,3 +1,5 @@
+import React from "react";
+import { flexBoxProps } from "../../interfaces/flexBoxInterfaces";
 export const Column = ({
   xl = 12,
   lg = 12,
@@ -6,7 +8,7 @@ export const Column = ({
   xs = 12,
   extraClass = "",
   children,
-}) => {
+}: flexBoxProps) => {
   return (
     <div
       className={`col-xl-${xl} col-lg-${lg} col-md-${md} col-sm-${sm} col-${xs} d-flex flex-column ${extraClass}`}
