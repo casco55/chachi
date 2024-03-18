@@ -8,4 +8,16 @@ import { Wrap } from "./stories/components/wrap";
 import { Accordion } from "./stories/components/accordion";
 import { Alert } from "./stories/components/alert";
 import { Button } from "./stories/components/button";
-export { SelectInput, SelectOptions, Column, Wrap, Accordion, Alert, Button };
+import { LinkCard } from "./stories/components/linkCard";
+import { ProductCard } from "./stories/components/productCard";
+export {
+  SelectInput,
+  SelectOptions,
+  Column,
+  Wrap,
+  Accordion,
+  Alert,
+  Button,
+  LinkCard,
+  ProductCard,
+};
