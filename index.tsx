@@ -10,6 +10,7 @@ import { Alert } from "./stories/components/alert";
 import { Button } from "./stories/components/button";
 import { LinkCard } from "./stories/components/linkCard";
 import { ProductCard } from "./stories/components/productCard";
+import { TestimonyCoverflowSlider } from "./stories/components/testimonyCoverflowSlider";
 export {
   SelectInput,
   SelectOptions,
@@ -20,4 +21,5 @@ export {
   Button,
   LinkCard,
   ProductCard,
+  TestimonyCoverflowSlider,
 };
