@@ -19,13 +19,25 @@ export const TestimonyCoverflowSlider = ({
   slidePaddingX = 5,
   slidePaddingY = 5,
 }: TestimonySliderProps) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [sliderWidtPercent, setSliderWidtPercent] = useState(50);
   const verifyIsMobile = () => {
-    if (window.innerWidth <= 992) {
-      setIsMobile(true);
+    if (window.innerWidth <= 576) {
+      setSliderWidtPercent(80);
       return;
     }
-    setIsMobile(false);
+    if (window.innerWidth <= 768) {
+      setSliderWidtPercent(60);
+      return;
+    }
+    if (window.innerWidth <= 992) {
+      setSliderWidtPercent(50);
+      return;
+    }
+    if (window.innerWidth <= 1200) {
+      setSliderWidtPercent(40);
+      return;
+    }
+    setSliderWidtPercent(33);
   };
   useEffect(() => {
     verifyIsMobile();
@@ -61,16 +73,12 @@ export const TestimonyCoverflowSlider = ({
               <SwiperSlide
                 key={index}
                 className={`border rounded-${slideBorderRadius} px-${slidePaddingX} py-${slidePaddingY} my-${slideMarginY}`}
-                style={{ width: isMobile ? "70%" : "33%" }}
+                style={{ width: `${sliderWidtPercent}%` }}
               >
                 <div className={`item col-12 no-select-text`}>
                   <h1>{title}</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Odit, ipsa aliquid! Repudiandae sapiente sint placeat facere
-                    nostrum, unde delectus nam minus odit, itaque fuga, quae
-                    ipsam odio quisquam! Aperiam, recusandae.
-                  </p>
+                  <p>{text}</p>
+                  <h3>{name}</h3>
                 </div>
               </SwiperSlide>
             </>
