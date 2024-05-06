@@ -22,22 +22,22 @@ export const TestimonyCoverflowSlider = ({
   const [sliderWidtPercent, setSliderWidtPercent] = useState(50);
   const verifyIsMobile = () => {
     if (window.innerWidth <= 576) {
-      setSliderWidtPercent(80);
+      setSliderWidtPercent(90);
       return;
     }
     if (window.innerWidth <= 768) {
-      setSliderWidtPercent(60);
+      setSliderWidtPercent(80);
       return;
     }
     if (window.innerWidth <= 992) {
-      setSliderWidtPercent(50);
+      setSliderWidtPercent(60);
       return;
     }
     if (window.innerWidth <= 1200) {
-      setSliderWidtPercent(40);
+      setSliderWidtPercent(50);
       return;
     }
-    setSliderWidtPercent(33);
+    setSliderWidtPercent(40);
   };
   useEffect(() => {
     verifyIsMobile();
