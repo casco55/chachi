@@ -12,6 +12,8 @@ import { LinkCard } from "./stories/components/linkCard";
 import { ProductCard } from "./stories/components/productCard";
 import { TestimonyCoverflowSlider } from "./stories/components/testimonyCoverflowSlider";
 import { SlideModal } from "./stories/components/slideModal";
+import { CoverflowCarousel } from "./stories/components/carousel/coverflow/carousel";
+import { CoverflowCarouselItem } from "./stories/components/carousel/coverflow/carouselItem";
 export {
   SelectInput,
   SelectOptions,
@@ -24,4 +26,6 @@ export {
   ProductCard,
   TestimonyCoverflowSlider,
   SlideModal,
+  CoverflowCarousel,
+  CoverflowCarouselItem,
 };
