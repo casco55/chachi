@@ -11,6 +11,7 @@ import { Button } from "./stories/components/button";
 import { LinkCard } from "./stories/components/linkCard";
 import { ProductCard } from "./stories/components/productCard";
 import { TestimonyCoverflowSlider } from "./stories/components/testimonyCoverflowSlider";
+import { SlideModal } from "./stories/components/slideModal";
 export {
   SelectInput,
   SelectOptions,
@@ -22,4 +23,5 @@ export {
   LinkCard,
   ProductCard,
   TestimonyCoverflowSlider,
+  SlideModal,
 };
