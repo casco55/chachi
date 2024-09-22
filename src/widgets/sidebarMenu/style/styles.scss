@@ -1,0 +1,17 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.sidebar {
+  &-item {
+    background-color: #ffff;
+    transition: all 0.3s ease-in-out;
+    color: #000;
+    &:hover {
+      background-color: #1f77ce;
+      color: #f8efed;
+    }
+    &-active {
+      background-color: #1f77ce;
+      color: #f8efed;
+    }
+  }
+}
