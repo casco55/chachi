@@ -1,10 +1,7 @@
+import { RouterApp } from "./routes/RouterApp";
 import "./styles/styles.scss";
 const App = () => {
-  return (
-    <div className="App">
-      <h1>Hello Vite + React!</h1>
-    </div>
-  );
+  return <RouterApp />;
 };
 
 export default App;
