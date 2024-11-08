@@ -6,8 +6,8 @@ export const RouterApp = () => {
   return (
     <>
       <FullHeightSection>
-        <SideNavBar />
         <Router>
+          <SideNavBar />
           <div className="w-100">
             <Routes>
               <Route path="/" element={<h1>Home</h1>} />

@@ -1,10 +1,11 @@
-@import "../../../../styles/styles.scss";
-.side-nav-bar {
-  overflow-x: hidden;
+.navigation {
+  position: fixed;
+  inset: 1rem;
   width: 3rem;
-  transition: all 0.3s ease-in-out;
-  interpolate-size: allow-keywords;
-  &:hover {
-    width: auto;
-  }
+  background: #287bff;
+  border-radius: 1.5rem;
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
