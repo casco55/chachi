@@ -1,7 +1,6 @@
 .navigation {
-  background: #fff;
+  background-color: var(--secondaryColor);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-
   padding-top: 2rem;
   padding-bottom: 2rem;
   height: 100dvh;
@@ -11,15 +10,26 @@
     width: 4rem;
     interpolate-size: allow-keywords;
     transition: all 0.3s ease-in-out;
+    padding-right: 1rem;
     &-icon {
+      color: var(--secondaryColor);
+      background-color: var(--primaryColor);
       width: 3rem;
       height: 3rem;
       margin-left: 0.5rem;
       margin-right: 1rem;
-      background-color: red;
     }
     &-text {
       white-space: nowrap;
+    }
+    &:hover {
+      background-color: var(--primaryColor);
+      color: var(--secondaryColor);
+      & .navigation-item-icon {
+        background-color: var(--secondaryColor);
+        color: var(--primaryColor);
+        border: 2px solid var(--primaryColor);
+      }
     }
   }
   &:hover {
