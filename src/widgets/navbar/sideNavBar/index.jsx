@@ -4,32 +4,33 @@ import "./style/style.scss";
 export const SideNavBar = () => {
   return (
     <>
-      <div className="navigation ">
-        <div>
-          <Link to="/" className="text-white d-flex col-12">
-            <div>
-              <TbLayoutNavbarFilled size={36} />
-            </div>
-            <span className="title">Home</span>
-          </Link>
-        </div>
-        <Link to="/" className="text-white d-flex col-12">
+      <div className="navigation">
+        <Link
+          to="/"
+          className="text-decoration-none text-dark d-flex flex-row navigation-item mb-2"
+        >
           <div>
-            <TbLayoutNavbarFilled size={36} />
+            <span className="navigation-item-icon rounded rounded-circle d-flex justify-content-center align-items-center">
+              <TbLayoutNavbarFilled size={24} />
+            </span>
           </div>
-          <span className="title">about</span>
+          <span className="navigation-item-text my-auto ">
+            dsfadsfdsdf dsfdsaf
+          </span>
         </Link>
-        <div>
-          <Link
-            to="/"
-            className="text-decoration-none text-white d-flex col-12"
-          >
-            <div>
-              <TbLayoutNavbarFilled size={36} />
-            </div>{" "}
-            <span className="title">contact</span>
-          </Link>
-        </div>
+        <Link
+          to="/"
+          className="text-decoration-none text-dark d-flex flex-row navigation-item"
+        >
+          <div>
+            <span className="navigation-item-icon rounded rounded-circle d-flex justify-content-center align-items-center">
+              <TbLayoutNavbarFilled size={24} />
+            </span>
+          </div>
+          <span className="navigation-item-text my-auto pe-2">
+            dsfadsfdsdf dsfdsaf
+          </span>
+        </Link>
       </div>
     </>
   );

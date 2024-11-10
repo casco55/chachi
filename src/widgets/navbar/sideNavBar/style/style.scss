@@ -1,11 +1,30 @@
 .navigation {
-  position: fixed;
-  inset: 1rem;
-  width: 3rem;
-  background: #287bff;
-  border-radius: 1.5rem;
-  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.1);
-  overflow-x: hidden;
+  background: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+
   padding-top: 2rem;
   padding-bottom: 2rem;
+  height: 100dvh;
+  transition: all 0.3s ease-in-out;
+  &-item {
+    overflow: hidden;
+    width: 4rem;
+    interpolate-size: allow-keywords;
+    transition: all 0.3s ease-in-out;
+    &-icon {
+      width: 3rem;
+      height: 3rem;
+      margin-left: 0.5rem;
+      margin-right: 1rem;
+      background-color: red;
+    }
+    &-text {
+      white-space: nowrap;
+    }
+  }
+  &:hover {
+    & .navigation-item {
+      width: auto;
+    }
+  }
 }
